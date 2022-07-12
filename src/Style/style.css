@@ -1,9 +1,40 @@
 /* /////////////////////////////////////////////// MAIN PAGE /////////////////////////////////////////////// */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
 
 
 .container-for-main {
     display: flex;
     border: 2px solid #ffa31a;
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo{
+    display: flex;
+    justify-content: space-between;
+    width: 98px;
+    margin-bottom: 30px;
+    border: 2px solid white;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.bot{
+    width: 70px;
+    color: white;
+}
+
+.hub{
+    border-radius: 5px;
+width: 62px;
+height: 40px;
+background-color: #ffa31a;
+}
+
+.container-for-main {
+    display: flex;
+    border: 2px solid black;
     width: 70%;
     height: 800px;
     background-color: rgb(0, 0, 0);
@@ -23,6 +54,7 @@
     width: 450px;
     height: 450px;
     background-color: black;
+    border: 2px solid #db8b12;
 
 }
 
@@ -46,7 +78,10 @@
     width: 30%;
     height: 50px;
     background-color: black;
-    color:  #db8b12
+
+    color:  #db8b12;
+    border: 2px solid white;
+    border-radius: 3px;
 }
 
 .btn:hover{
@@ -80,9 +115,13 @@
     margin-right: 15px;
     margin-top: 15px;
     width: 160px;
-    height: 80px;
-    background-color: rgb(0, 0, 0);
+    height: 80px;;
     border: 2px solid white;
+    background-color: black;
+    color:  #db8b12;
+    border: 2px solid white;
+    border-radius: 3px;
+
 }
 
 .gernerate-report-button:hover{
@@ -107,9 +146,10 @@
 .container-for-popUp{
     position: absolute;
     border: 2px solid black;
+
     width: 600px;
     height: 800px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,16 +170,19 @@
 input[type='checkbox'] {
     width:30px;
     height:30px;
-    background:white;
+    background-color:#ffa31a;
 }
 
 .other{
     font-size: 25px;
     width: 80%;
     margin-top: 10px;
+    color: white;
 }
 
 #inputBox{
+    background-color: black;
+    color: white;
     width: 80%;
     height: 5%;
     font-size: 25px;
@@ -154,33 +197,15 @@ input[type='checkbox'] {
     height: 40%;
 }
 
-.cancel-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-width: 190px;
-border: 2px solid black;
-height: 50px;
-font-size: 25px;
-}
-
-.ok-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    width: 190px;
-    border: 2px solid black;
-    height: 50px;
-}
 
 /* /////////////////////////////////////////   REPORT PAGE  ///////////////////////////////////////////////////// */
 
 .footer {
+    color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: gray;
+    background-color: #ffa31a;
     bottom: 0;
     height: 100px;
     width: 100%;
@@ -242,6 +267,7 @@ font-size: 25px;
 
 
 .random-images{
+    border: 2px solid white;
     margin: 22px;
     width: 200px;
     height: 200px;
