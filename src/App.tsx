@@ -7,7 +7,6 @@ import {getImage, getReports} from "./API";
 
 
 
-
 function App() {
   return (
     <div className="App">

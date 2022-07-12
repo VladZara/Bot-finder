@@ -1,6 +1,8 @@
+
 import React, {useEffect, useState} from "react";
 import "../../Style/style.css";
 import {getImage, getReasons} from "../../API";
+
 
 
 const Main: React.FC = () => {
@@ -9,6 +11,7 @@ const Main: React.FC = () => {
 useEffect(() =>{
   getImage().then(item => setImage(item))
 }, [])
+
 
   return (
     <>
