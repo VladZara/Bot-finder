@@ -1,8 +1,9 @@
+import React from "react";
 import "../../Style/style.css";
 
 const PopUp: React.FC = () =>{
     return(
-    <div className="container-for-popUp">
+    <div className="container-for-popUp" style={{color: "#ffa31a"}}>
     <h1 style={{height: "180px"}}>Why?</h1>
 <div style={{width: "80%"}}><span style={{fontSize: "25px"}}>Choose Features</span></div>
 <div className="options">
@@ -21,11 +22,11 @@ const PopUp: React.FC = () =>{
   <input type="checkbox"/>
   <label htmlFor="feature"> Jewellery </label><br/>
 </div>
-<div className="other">Other:</div>
+<div className="other" style={{color: "#ffa31a"}}>Other:</div>
     <input type="text" placeholder="  Enter your own feature" id="inputBox"/><br/>
     <div className="buttons-container">
-        <div className="cancel-btn">Cancel</div>
-        <div className="ok-btn">Ok</div>
+        <div className="btn">Cancel</div>
+        <div className="btn">Ok</div>
     </div>
 </div>
     )

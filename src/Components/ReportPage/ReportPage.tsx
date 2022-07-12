@@ -1,8 +1,9 @@
+import React from "react";
 import "../../Style/style.css";
 
 const ReportPage: React.FC = () =>{
 return(
-    <div className="container">
+    <div className="container-for-report">
     <div className="report">Report</div>
 
     <div className="category-container">
