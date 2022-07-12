@@ -4,14 +4,14 @@ import App from './App';
 import {Provider} from "react-redux"
 import thunk from "redux-thunk"
 import {applyMiddleware, compose, createStore} from "redux"
+import { rootReducer } from './redux/rootReducer';
 
 
 const store = createStore(rootReducer, compose(
   applyMiddleware(
     thunk
-  )
-)
-)
+
+)))
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
