@@ -190,10 +190,11 @@ input[type='checkbox'] {
 /* /////////////////////////////////////////   REPORT PAGE  ///////////////////////////////////////////////////// */
 
 .footer {
+    color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: gray;
+    background-color: #ffa31a;
     bottom: 0;
     height: 100px;
     width: 100%;
@@ -255,6 +256,7 @@ input[type='checkbox'] {
 
 
 .random-images{
+    border: 2px solid white;
     margin: 22px;
     width: 200px;
     height: 200px;

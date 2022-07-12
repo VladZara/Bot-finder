@@ -8,7 +8,7 @@ import ReportPage from './Components/ReportPage/ReportPage';
 function App() {
   return (
     <div className="App">
-      <ReportPage/>
+      <Main/>
     </div>
   );
 }
