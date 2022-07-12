@@ -7,13 +7,13 @@ const Main: React.FC = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container-for-main">
         <div className="random-image"></div>
         <div className="button-container">
-          <div className="real-btn">
+          <div className="btn">
             <h3>Real</h3>
           </div>
-          <div className="fake-btn">
+          <div className="btn">
             <h3>Fake</h3>
           </div>
         </div>
