@@ -2,23 +2,30 @@
 import React, {useEffect, useState} from "react";
 import "../../Style/style.css";
 import {getImage, getReasons} from "../../API";
+import PopUp from "../PopUp/PopUp";
+
 
 
 
 const Main: React.FC = () => {
-
   const [image, setImage] = useState()
 useEffect(() =>{
   getImage().then(item => setImage(item))
 }, [])
 
+const refresh = () => {
+  getImage().then(item => setImage(item))
+}
+
+
+
 
   return (
     <>
-      <div className="container">
-        <div className="random-image"><img src={image}/></div>
+      <div className="container-for-main" style={{}}>
+        <img src={image} className="random-image"/>
         <div className="button-container">
-          <div className="btn">
+          <div className="btn" onClick={refresh}>
             <h3>Real</h3>
           </div>
           <div className="btn">
