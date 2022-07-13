@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../../Style/style.css";
 
 
@@ -10,6 +11,11 @@ import "../../Style/style.css";
 
 
 const ReportPage: React.FC = () =>{
+let navigate = useNavigate()
+
+const sendToMainPage = () => {
+    navigate("/")
+}
 return(
     <div className="container-for-report">
     <div className="report">Report</div>
@@ -69,7 +75,7 @@ return(
         </div>
     </div>
     <div className="footer">
-        <div className="back-btn">Go Back</div>
+        <div className="back-btn" onClick={sendToMainPage}>Go Back</div>
         <div className="adder-btn">Add more</div>
     </div>
 </div>
