@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import {Provider} from "react-redux"
-import { getImage } from './API';
+import thunk from "redux-thunk"
+import {applyMiddleware, compose, createStore} from "redux"
+import { rootReducer } from './redux/rootReducer';
+import { BrowserRouter } from 'react-router-dom';
 import { store } from './redux/store';
-getImage()
-.then(response => console.log(response))
 
 
 const root = ReactDOM.createRoot(
@@ -15,7 +16,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <Provider store={store}>
+     <BrowserRouter>
     <App />
+    </BrowserRouter>
   </Provider>
     
   
