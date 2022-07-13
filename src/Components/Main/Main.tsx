@@ -27,6 +27,7 @@ const popup = useSelector((state:any) => state.app.show)
 
 const refresh = () => {
   getImage().then(item => setImage(item))
+
 }
 
 const sendToReportPage = () => {
@@ -57,7 +58,7 @@ const sendToReportPage = () => {
           </div>
         </div>
         <div className="list-images-container"> 
-
+<AddImage image={image}/>
         </div>
       </div>
     </>
