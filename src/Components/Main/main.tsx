@@ -5,17 +5,27 @@ import {getImage, getReasons} from "../../API";
 import PopUp from "../PopUp/PopUp";
 import { Link, useNavigate } from "react-router-dom";
 import AddImage from "./AddImage";
+import { useDispatch, useSelector } from "react-redux";
+import { ShowPopup } from "../../redux/utilities";
+
 
 
 
 
 const Main: React.FC = () => {
+
 let navigate = useNavigate()
 
-  const [image, setImage] = useState()
-useEffect(() =>{
-  getImage().then(item => setImage(item))
-}, [])
+const [image, setImage] = useState()
+const dispatch = useDispatch()
+const popup = useSelector((state:any) => state.app.show)
+
+
+
+
+  useEffect(() =>{
+    getImage().then(item => setImage(item))
+  }, [])
 
 const refresh = () => {
   getImage().then(item => setImage(item))
@@ -34,7 +44,9 @@ const sendToReportPage = () => {
           <div className="btn" onClick={refresh}>
             <h3>Real</h3>
           </div>
-          <div className="btn">
+          <div className="btn"
+               
+          >
             <h3>Fake</h3>
           </div>
         </div>
