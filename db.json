@@ -1,0 +1,21 @@
+{
+  "reports": [],
+  "reasons": [
+    {
+      "reason": "Background",
+      "id": 0
+    },
+    {
+      "reason": "Eyes",
+      "id": 1
+    },
+    {
+      "reason": "Nose",
+      "id": 2
+    },
+    {
+      "reason": "Mouth",
+      "id": 3
+    }
+  ]
+}

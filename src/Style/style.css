@@ -120,12 +120,10 @@ background-color: #ffa31a;
     margin-top: 15px;
     width: 160px;
     height: 80px;;
-    border: 2px solid white;
     background-color: black;
-    color:  #ffffff;
     border: 2px solid #ffbf00;
     border-radius: 3px;
-
+font-size: 13px;
 }
 
 .gernerate-report-button:hover{
@@ -169,6 +167,8 @@ color: #ffa31a;
 
 .imageSize{
     width: 300px;
+
+
 }
 
 .options{

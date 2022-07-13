@@ -1,8 +1,0 @@
-
-export enum ActionType {
-    GET_PERSON = "GETPERSON",
-    FAKE_PERSONS = "FAKE_PERSONS",
-    ADD_REASONS = "ADD_REASONS",
-    SHOW_POPUP = "APP/SHOW_POPUP",
-    HIDE_POPUP = "APP/HIDE_POPUP"
-}

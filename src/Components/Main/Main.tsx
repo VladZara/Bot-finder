@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
 import "../../Style/style.css";
-import {getImage, getReasons} from "../../API";
+import {getImage, getReasons, postReport} from "../../API";
 import PopUp from "../PopUp/PopUp";
 import { Link, useNavigate } from "react-router-dom";
 import AddImage from "./AddImage";
-import { useDispatch, useSelector } from "react-redux";
+
+
 
 
 
@@ -13,10 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 const Main: React.FC = () => {
 const [buttonPopup, setButtonPopup] = useState(false)
 let navigate = useNavigate()
-
 const [image, setImage] = useState()
-const dispatch = useDispatch()
-const popup = useSelector((state:any) => state.app.show)
 
 
 
@@ -25,10 +23,11 @@ const popup = useSelector((state:any) => state.app.show)
     getImage().then(item => setImage(item))
   }, [])
 
-const refresh = () => {
+let generateImageUrl = () => {
   getImage().then(item => setImage(item))
-
+    console.log(image)
 }
+
 
 const sendToReportPage = () => {
    navigate("/Report/Page")
@@ -40,7 +39,7 @@ const sendToReportPage = () => {
       <div className="container-for-main" style={{}}>
         <img src={image} className="random-image"/>
         <div className="button-container">
-          <div className="btn" onClick={refresh}>
+          <div className="btn" onClick={generateImageUrl}>
             <h3>Real</h3>
           </div>
           <div className="btn"
