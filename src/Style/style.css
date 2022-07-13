@@ -83,7 +83,7 @@ background-color: #ffa31a;
     height: 50px;
     background-color: black;
 
-    color:  #db8b12;
+    color:  #ffffff;
     border: 2px solid #ffbf00;
     border-radius: 3px;
 }
@@ -122,7 +122,7 @@ background-color: #ffa31a;
     height: 80px;;
     border: 2px solid white;
     background-color: black;
-    color:  #db8b12;
+    color:  #ffffff;
     border: 2px solid #ffbf00;
     border-radius: 3px;
 
@@ -131,7 +131,7 @@ background-color: #ffa31a;
 .gernerate-report-button:hover{
     background-color: #ffa31a;
     cursor: pointer;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 .gernerate-report-button:active{
     background-color: #a26811;
@@ -152,21 +152,24 @@ background-color: #ffa31a;
 
 /* /////////////////////////////////////////   POP UP  ///////////////////////////////////////////////////// */
 
+
+
 .container-for-popUp{
     position: absolute;
     border: 2px solid #ffbf00;
-
+color: #ffa31a;
     width: 600px;
     height: 800px;
     background-color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    margin-bottom: 215px;
 }
 
-
-
+.imageSize{
+    width: 300px;
+}
 
 .options{
     border: 2px solid #ffbf00;
@@ -187,7 +190,7 @@ input[type='checkbox'] {
     font-size: 25px;
     width: 80%;
     margin-top: 10px;
-    color: white;
+    color: #ffa31a;
 }
 
 #inputBox{
@@ -210,9 +213,6 @@ input[type='checkbox'] {
 
 /* /////////////////////////////////////////   REPORT PAGE  ///////////////////////////////////////////////////// */
 
-*{
-    color: white;
-}
 
 .footer {
     color: black;
@@ -236,6 +236,7 @@ input[type='checkbox'] {
     color: aliceblue;
     width: 139px;
     height: 38px;
+    border: 2px solid white;
     background-color: black;
 }
 
@@ -247,6 +248,7 @@ input[type='checkbox'] {
     height: 97vh;
     overflow-y:scroll;
     display: block;
+    color: white;
     background-color: black;
 }
 
@@ -274,6 +276,11 @@ input[type='checkbox'] {
     height: 38px;
     background-color: black;
     margin-left: 30px;
+    border: 2px solid white;
+}
+.back-btn:hover{
+    background-color: #ffbf00;
+    color: black;
 }
 
 .images-container {

@@ -57,7 +57,7 @@ const sendToReportPage = () => {
           </div>
         </div>
         <div className="list-images-container"> 
-
+<AddImage image={image}/>
         </div>
       </div>
     </>
