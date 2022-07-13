@@ -57,7 +57,9 @@ background-color: #ffa31a;
     height: 450px;
     background-color: black;
     border: 2px solid #db8b12;
-
+    min-width: 100px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 .button-container {
@@ -108,7 +110,7 @@ background-color: #ffa31a;
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    height: 100px;
+    height: auto;
 }
 
 .gernerate-report-button {
@@ -140,6 +142,11 @@ background-color: #ffa31a;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.imagesStyle{
+    width: auto;
+    height: auto;
 }
 
 

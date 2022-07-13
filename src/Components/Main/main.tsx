@@ -4,8 +4,10 @@ import "../../Style/style.css";
 import {getImage, getReasons} from "../../API";
 import PopUp from "../PopUp/PopUp";
 import { Link, useNavigate } from "react-router-dom";
+import AddImage from "./AddImage";
 import { useDispatch, useSelector } from "react-redux";
 import { ShowPopup } from "../../redux/utilities";
+
 
 
 
@@ -55,7 +57,9 @@ const sendToReportPage = () => {
             <h2>Generate report</h2>
           </div>
         </div>
-        <div className="list-images-container"></div>
+        <div className="list-images-container"> 
+
+        </div>
       </div>
     </>
   );
