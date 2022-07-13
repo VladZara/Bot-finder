@@ -75,7 +75,7 @@ return(
         </div>
     </div>
     <div className="footer">
-        <div className="back-btn" onClick={sendToMainPage}>Go Back</div>
+        <div className="back-btn" onClick={sendToMainPage} style={{cursor: "pointer"}}>Go Back</div>
         <div className="adder-btn">Add more</div>
     </div>
 </div>
