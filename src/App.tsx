@@ -1,10 +1,7 @@
 import React from 'react';
-import Main from './Components/Main/Main';
-import PopUp from './Components/PopUp/PopUp';
 import ReportPage from './Components/ReportPage/ReportPage';
-import {getImage, getReports} from "./API";
 import { Route, Routes } from 'react-router-dom';
-
+import Main from "../src/Components/Main/Main"
 
 
 function App() {

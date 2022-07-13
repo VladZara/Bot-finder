@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../../Style/style.css";
 
-const PopUp: React.FC = () => {
-  return (
+const PopUp = (props:any) => {
+  return (props.trigger) ?  (
     <div className="container-for-popUp">
       <h1 style={{ height: "180px" }}>Why?</h1>
       <div style={{ width: "80%" }}>
@@ -37,11 +37,12 @@ const PopUp: React.FC = () => {
       <input type="text" placeholder="  Enter your own feature" id="inputBox" />
       <br />
       <div className="buttons-container">
-        <div className="btn">Cancel</div>
-        <div className="btn">Ok</div>
+        <div className="btn" onClick={() => props.setTrigger(false)}>Cancel</div>
+        <div className="btn" onClick={() => props.setTrigger(false)}>Ok</div>
+          {props.children}
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default PopUp;

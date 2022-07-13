@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from "react";
 import "../../Style/style.css";
 import {getImage, getReasons} from "../../API";
@@ -6,14 +5,13 @@ import PopUp from "../PopUp/PopUp";
 import { Link, useNavigate } from "react-router-dom";
 import AddImage from "./AddImage";
 import { useDispatch, useSelector } from "react-redux";
-import { ShowPopup } from "../../redux/utilities";
 
 
 
 
 
 const Main: React.FC = () => {
-
+const [buttonPopup, setButtonPopup] = useState(false)
 let navigate = useNavigate()
 
 const [image, setImage] = useState()
@@ -45,12 +43,13 @@ const sendToReportPage = () => {
             <h3>Real</h3>
           </div>
           <div className="btn"
-               
+               onClick={() => setButtonPopup(true)}
           >
             <h3>Fake</h3>
           </div>
         </div>
       </div>
+      <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}/>
       <div className="list-images">
         <div className="generate-btn">
           <div className="gernerate-report-button" onClick={sendToReportPage}>
