@@ -3,7 +3,7 @@ import "../../Style/style.css";
 
 const AddImage = (props: any ) =>{
     return(
-        <div className="imagesStyle"><img src={`${props.image}`} alt="" /></div>
+        <div className="imagesStyle"><img className="imageSize" src={`${props.image}`} alt="" /></div>
     )
 }
 
