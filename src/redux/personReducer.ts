@@ -18,22 +18,27 @@ import { ActionType} from "./actions/actionTypes"
 //     realPersons: []
 // }
 const initialState = {
-    background: [],
-    eyes: [],
-    hair: [],
-    ears: [],
-    nose: [],
-    mouth: [],
-    jewellery: [],
-    additionalReason: []
+    allPersons: [],
+    fakePersons: {
+        background: [],
+        eyes: [],
+        hair: [],
+        ears: [],
+        nose: [],
+        mouth: [],
+        jewellery: [],
+        additionalReason: []
+    }
 }
 
 
 
 export const personsReducer = (state = initialState, action: Action) => {
     switch (action.type) {
+        case ActionType.GET_PERSON:
+            return {...state, allPersons: state.allPersons.concat(action.payload)}
         case ActionType.FAKE_PERSONS:
-            return {...state, background: state.background.concat(action.payload)}
+            return {...state, fakePersons: state.fakePersons.background.concat(action.payload)}
         default: return state
     }
 }

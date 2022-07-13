@@ -2,17 +2,12 @@ import { ActionType } from "./actionTypes"
 
 interface GetPersonAction {
     type: ActionType.GET_PERSON,
-    payload: number
+    payload: []
 }
 
 interface FakePersonAction {
     type: ActionType.FAKE_PERSONS,
     payload: []
-}
-
-interface AddReasonsAction {
-    type: ActionType.ADD_REASONS,
-    payload: string
 }
 
 interface ShowPopup {
@@ -25,6 +20,6 @@ interface HidePopup {
     payload: boolean
 }
  
-export type Action = GetPersonAction | FakePersonAction | AddReasonsAction | ShowPopup | HidePopup
+export type Action = GetPersonAction | FakePersonAction | ShowPopup | HidePopup
 
 
