@@ -3,15 +3,20 @@ import React, {useEffect, useState} from "react";
 import "../../Style/style.css";
 import {getImage, getReasons} from "../../API";
 import PopUp from "../PopUp/PopUp";
+import { useDispatch, useSelector } from "react-redux";
 
 
 
 
 const Main: React.FC = () => {
+
   const [image, setImage] = useState()
-useEffect(() =>{
-  getImage().then(item => setImage(item))
-}, [])
+  const dispatch = useDispatch<any>()
+  const eyes = useSelector<any>((state:any) => state.posts.fakePerson.eyes)
+
+  useEffect(() =>{
+    getImage().then(item => setImage(item))
+  }, [])
 
 const refresh = () => {
   getImage().then(item => setImage(item))
