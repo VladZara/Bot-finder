@@ -4,9 +4,9 @@ import {getImage, getReasons, postReport} from "../../API";
 import PopUp from "../PopUp/PopUp";
 import { Link, useNavigate } from "react-router-dom";
 import AddImage from "./AddImage";
-import {useDispatch, useSelector} from "react-redux";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {fetchReal} from "../../redux/store/actionCreators/real";
+import {useActions} from "../hooks/useActions";
 
 
 
@@ -14,17 +14,16 @@ import {fetchReal} from "../../redux/store/actionCreators/real";
 
 const Main: React.FC = () => {
     const state: any = useTypedSelector(state => state.real)
-    const dispatch: any = useDispatch()
     const [buttonPopup, setButtonPopup] = useState(false)
-    const [image, setImage] = useState(state.real[0])
+
     let navigate = useNavigate()
+    const { fetchReal } = useActions()
 useEffect(() => {
-    dispatch(fetchReal())
+    fetchReal()
 }, [])
 
 const generateImageUrl = () => {
-    const img = dispatch(fetchReal())
-    setImage(img)
+    const img = fetchReal()
 }
 
 const sendToReportPage = () => {
@@ -34,7 +33,7 @@ const sendToReportPage = () => {
     return (
     <>
       <div className="container-for-main" style={{}}>
-        <img src={image} className="random-image"/>
+        <img src={state.real.slice(-1)} className="random-image"/>
         <div className="button-container">
           <div className="btn" onClick={generateImageUrl}>
             <h3>Real</h3>
