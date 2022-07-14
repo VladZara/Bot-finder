@@ -4,37 +4,34 @@ import {getImage, getReasons, postReport} from "../../API";
 import PopUp from "../PopUp/PopUp";
 import { Link, useNavigate } from "react-router-dom";
 import AddImage from "./AddImage";
-
-
+import {useDispatch, useSelector} from "react-redux";
+import {useTypedSelector} from "../hooks/useTypedSelector";
+import {fetchReal} from "../../redux/store/actionCreators/real";
 
 
 
 
 
 const Main: React.FC = () => {
-const [buttonPopup, setButtonPopup] = useState(false)
-let navigate = useNavigate()
-const [image, setImage] = useState()
+    const state: any = useTypedSelector(state => state.real)
+    const dispatch: any = useDispatch()
+    const [buttonPopup, setButtonPopup] = useState(false)
+    const [image, setImage] = useState(state.real[0])
+    let navigate = useNavigate()
+useEffect(() => {
+    dispatch(fetchReal())
+}, [])
 
-
-
-
-  useEffect(() =>{
-    getImage().then(item => setImage(item))
-  }, [])
-
-let generateImageUrl = () => {
-  getImage().then(item => setImage(item))
-    console.log(image)
+const generateImageUrl = () => {
+    const img = dispatch(fetchReal())
+    setImage(img)
 }
-
 
 const sendToReportPage = () => {
    navigate("/Report/Page")
 }
 
-
-  return (
+    return (
     <>
       <div className="container-for-main" style={{}}>
         <img src={image} className="random-image"/>
@@ -56,12 +53,13 @@ const sendToReportPage = () => {
             <h2>Generate report</h2>
           </div>
         </div>
-        <div className="list-images-container"> 
-<AddImage image={image}/>
+        <div className="list-images-container">
+            {state.real.map((item: any) => <AddImage image={item}/>)}
         </div>
       </div>
     </>
   );
+
 };
 
 export default Main;
