@@ -2,21 +2,6 @@ import { Action } from "./actions/actions"
 import { ActionType} from "./actions/actionTypes"
 
 
-// const initialState = {
-//    allPersons: [],
-//     fakePerson: [{
-//         background: "",
-//         eyes: false,
-//         hair: false,
-//         ears: false,
-//         nose: false,
-//         mouth: false,
-//         jewellery: false,
-//         additionalReason: ""
-//     }],
-//     fakePersons: [],
-//     realPersons: []
-// }
 const initialState = {
     allPersons: [],
     fakePersons: {
@@ -30,7 +15,6 @@ const initialState = {
         additionalReason: []
     }
 }
-
 
 
 export const personsReducer = (state = initialState, action: Action) => {
