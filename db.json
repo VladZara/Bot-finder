@@ -1,8 +1,10 @@
 {
-  "reports": [],
+  "reports": [
+  
+  ],
   "reasons": [
     {
-      "reason": "Background",
+      "reason": "Ears",
       "id": 0
     },
     {
@@ -16,6 +18,50 @@
     {
       "reason": "Mouth",
       "id": 3
+    },
+    {
+      "reason": "fd",
+      "id": 4
+    },
+    {
+      "reason": "fd",
+      "id": 5
+    },
+    {
+      "reason": "fd",
+      "id": 6
+    },
+    {
+      "reason": "fd",
+      "id": 7
+    },
+    {
+      "reason": "fd",
+      "id": 8
+    },
+    {
+      "reason": "fd",
+      "id": 9
+    },
+    {
+      "reason": "fd",
+      "id": 10
+    },
+    {
+      "reason": "fd",
+      "id": 11
+    },
+    {
+      "reason": "fd",
+      "id": 12
+    },
+    {
+      "reason": "fd",
+      "id": 13
+    },
+    {
+      "reason": "fd",
+      "id": 14
     }
   ]
 }

@@ -1,45 +1,55 @@
 import React, {useEffect, useState} from "react";
 import "../../Style/style.css";
-import {getImage, getReasons, postReport} from "../../API";
+import { getImage, getReasons, postReason, getReports, postReport } from "../../API";
 import PopUp from "../PopUp/PopUp";
-import { Link, useNavigate } from "react-router-dom";
-import AddImage from "./AddImage";
-import {useTypedSelector} from "../hooks/useTypedSelector";
-import {fetchReal} from "../../redux/store/actionCreators/real";
-import {useActions} from "../hooks/useActions";
+import { useNavigate } from "react-router-dom";
+import AddImage from "./AddImage"
 
 
+export let imageURL:any
 
+const Main: React.FC = (props: any) => {
+  const [buttonPopup, setButtonPopup] = useState(false)
+  const [image, setImage] = useState<any>()
+  const [imageFromReports, setImageFromReports] = useState([])
+   
+  imageURL = image
+  let navigate = useNavigate()
 
+  const sendToReportPage = () => {
+    navigate("/Report/Page")
+ }
 
-const Main: React.FC = () => {
-    const state: any = useTypedSelector(state => state.real)
-    const [buttonPopup, setButtonPopup] = useState(false)
+  
 
-    let navigate = useNavigate()
-    const { fetchReal } = useActions()
+  const generateImageURL = () => {
+    getImage().then(item => setImage(item))
+    setButtonPopup(true)
+  }
+  
+  
+
 useEffect(() => {
-    fetchReal()
-}, [])
+  getImage().then(item => setImage(item))
+  // getReports()
+  //   .then(report => setImageFromReports(report))
+  }, [])
 
-const generateImageUrl = () => {
-    const img = fetchReal()
-}
-
-const sendToReportPage = () => {
-   navigate("/Report/Page")
-}
+  useEffect(() => {
+    getReports()
+    .then(report => setImageFromReports(report))
+  }, [buttonPopup])
 
     return (
     <>
-      <div className="container-for-main" style={{}}>
-        <img src={state.real.slice(-1)} className="random-image"/>
+      <div className="container-for-main">
+        <img src={image} className="random-image" alt={""}/>
         <div className="button-container">
-          <div className="btn" onClick={generateImageUrl}>
+          <div className="btn" >
             <h3>Real</h3>
           </div>
           <div className="btn"
-               onClick={() => setButtonPopup(true)}
+               onClick={generateImageURL}
           >
             <h3>Fake</h3>
           </div>
@@ -53,7 +63,9 @@ const sendToReportPage = () => {
           </div>
         </div>
         <div className="list-images-container">
-            {state.real.map((item: any) => <AddImage image={item}/>)}
+          {imageFromReports.map((report: any) => {
+            return (<AddImage image={report.src} />)
+          })}
         </div>
       </div>
     </>

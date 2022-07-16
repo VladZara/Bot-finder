@@ -147,6 +147,22 @@ font-size: 13px;
     height: auto;
 }
 
+.delete-img-btn{
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    text-align: center;
+    position: relative;
+    left: 95%;
+    bottom: 95%;
+    color: white;
+    border-radius: 50%;
+    user-select: none;
+    cursor: pointer;
+    opacity: 0;
+}
+
+
 
 /* /////////////////////////////////////////   POP UP  ///////////////////////////////////////////////////// */
 
@@ -162,7 +178,7 @@ color: #ffa31a;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 215px;
+    margin-bottom: 240px;
 }
 
 .imageSize{
@@ -173,11 +189,12 @@ color: #ffa31a;
 
 .options{
     border: 2px solid #ffbf00;
-    overflow-y:scroll;
     width: 80%;
     display:block;
-    height: 15vh;
+    height: auto;
     font-size: larger;
+    overflow-y: auto;
+
 }
 
 input[type='checkbox'] {
