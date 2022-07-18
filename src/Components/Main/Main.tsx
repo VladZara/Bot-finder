@@ -7,14 +7,21 @@ import AddImage from "./AddImage"
 
 
 export let imageURL:any
+export let imageFromReportsURL: any
 
 const Main: React.FC = (props: any) => {
   const [buttonPopup, setButtonPopup] = useState(false)
   const [image, setImage] = useState<any>()
   const [imageFromReports, setImageFromReports] = useState([])
+
+
+  
    
   imageURL = image
   let navigate = useNavigate()
+
+  imageFromReportsURL = imageFromReports
+  
 
   const sendToReportPage = () => {
     navigate("/Report/Page")

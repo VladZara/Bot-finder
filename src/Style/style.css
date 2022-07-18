@@ -162,7 +162,28 @@ font-size: 13px;
     opacity: 0;
 }
 
+.del-img-btn{
+    width: 25px;
+    height: 25px;
+    color: white;
+    text-align: center;
+    background-color: red;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    left: 95%;
+    bottom: 95%;
+    border-radius: 50%;
+    opacity: 0;
+}
 
+.del-img-btn:hover{
+    opacity: 1;
+}
+
+.imageSize:hover + .del-img-btn{
+ opacity: 1;
+}
 
 /* /////////////////////////////////////////   POP UP  ///////////////////////////////////////////////////// */
 
