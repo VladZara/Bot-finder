@@ -27,7 +27,6 @@ const Main: React.FC = (props: any) => {
     navigate("/Report/Page")
  }
 
-  
 
   const generateImageURL = () => {
     getImage().then(item => setImage(item))
@@ -70,9 +69,10 @@ useEffect(() => {
           </div>
         </div>
         <div className="list-images-container">
-          {imageFromReports.map((report: any) => {
-            return (<AddImage image={report.src} />)
+          {imageFromReports.map((report: any, index: number) => {
+            return (<AddImage image={report.src} id={report.id} />)
           })}
+
         </div>
       </div>
     </>
