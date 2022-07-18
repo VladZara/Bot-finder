@@ -1,6 +1,7 @@
 import React from "react";
 import { deleteReport } from "../../API";
 import "../../Style/style.css";
+import { imageFromReportsURL } from "./Main";
 
 const AddImage = (props: any ) =>{
 
@@ -21,3 +22,4 @@ const AddImage = (props: any ) =>{
 }
 
 export default AddImage
+
