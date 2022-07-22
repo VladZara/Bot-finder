@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getAllReports } from "../../API";
 import "../../Style/style.css";
 
 
+export const ReportPage: React.FC = () => {
+ const [reports, setReports] = useState([])
 
+useEffect(() => {
+    getAllReports()
+    .then((item: any) => setReports(item))
+}, [])
 
-
-
-
-
-
-const ReportPage: React.FC = () =>{
+console.log('reports :>> ', reports);
 let navigate = useNavigate()
 
 const sendToMainPage = () => {
@@ -19,68 +21,27 @@ const sendToMainPage = () => {
 return(
     <div className="container-for-report">
     <div className="report">Report</div>
-
-    <div className="category-container">
-        <div>Background</div>
-        <div className="images-container">
-        <div className="random-images"></div>
-        <div className="random-images"></div>
-        </div>
-    </div>
-    <div className="category-container">
-        <div>Eyes</div>
-        <div className="images-container">
-        <div className="random-images"></div>
-        <div className="random-images"></div>
-        <div className="random-images"></div>
-        </div>
-    </div>
-    <div className="category-container">
-        <div>Hair</div>
-        <div className="images-container">
-        <div className="random-images"></div>
-        <div className="random-images"></div>
-        <div className="random-images"></div>
-        </div>
-    </div>
-    <div className="category-container">
-        <div>Nose</div>
-        <div className="images-container">
-            <div className="randomImage"></div>
-            <div className="randomImage"></div>
-        </div>
-    </div>
-    <div className="category-container">
-        <div>Ears</div>
-        <div className="images-container">
-        <div className="random-images"></div>
-        <div className="random-images"></div>
-        <div className="random-images"></div>
-        </div>
-    </div>
-    <div className="category-container">
-        <div>Mouth</div>
-        <div className="images-container">
-        <div className="random-images"></div>
-        <div className="random-images"></div>
-        <div className="random-images"></div>
-        <div className="random-images"></div>
-        </div>
-    </div>
-    <div className="category-container">
-        <div>Jewellery</div>
-        <div className="images-container">
-        <div className="random-images"></div>
-        <div className="random-images"></div>
-        </div>
-    </div>
+        {reports.map((item: any) => {
+            return (
+                <div className="category-container">
+                <h1>{item.reason}</h1>
+                    <div className="images-container">
+                        {item.srcs.map((image: any) => { 
+                            return (
+                                <img className="random-images" src={image.src} alt="fake-person"/>   
+                                )
+                            })
+                        }
+                    </div>
+                
+                </div>
+            )
+        })
+        }
     <div className="footer">
         <div className="back-btn" onClick={sendToMainPage} style={{cursor: "pointer"}}>Go Back</div>
         <div className="adder-btn">Add more</div>
     </div>
 </div>
-
 )
 }
-
-export default ReportPage
