@@ -12,7 +12,6 @@ useEffect(() => {
     .then((item: any) => setReports(item))
 }, [])
 
-console.log('reports :>> ', reports);
 let navigate = useNavigate()
 
 const sendToMainPage = () => {
