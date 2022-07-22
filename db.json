@@ -1,35 +1,26 @@
 {
   "reports": [
-   
   ],
   "reasons": [
     {
       "id": 1,
       "reason": "ears",
-      "srcs": [
-        
-      ]
+      "srcs": []
     },
     {
       "id": 2,
       "reason": "eyes",
-      "srcs": [
-        
-      ]
+      "srcs": []
     },
     {
       "id": 3,
       "reason": "nose",
-      "srcs": [
-       
-      ]
+      "srcs": []
     },
     {
       "id": 4,
       "reason": "mouth",
-      "srcs": [
-      
-      ]
+      "srcs": []
     }
   ]
 }

@@ -60,10 +60,10 @@ export const PopUp = (props: any) => {
         });
       } else if (value) {
         postReport({ src: imageURL });
-        putImage({ src: imageURL }, reasonsArray);
+        putImage({ src: imageURL }, allCheckboxes);
       } else if (inputValue !== "") {
         postReport({ src: imageURL });
-        putImage({ src: imageURL }, reasonsArray);
+        putImage({ src: imageURL }, allCheckboxes);
       }
     }
     setInputValue("");
