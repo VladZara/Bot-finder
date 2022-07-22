@@ -1,22 +1,21 @@
 import React, {useEffect, useState} from "react";
+import { getImage, getReports } from "../../API"
+import { PopUp } from "../PopUp/PopUp"
+import { useNavigate } from "react-router-dom"
+import { AddImage }from "./AddImage"
 import "../../Style/style.css";
-import { getImage, getReasons, postReason, getReports, postReport } from "../../API";
-import PopUp from "../PopUp/PopUp";
-import { useNavigate } from "react-router-dom";
-import AddImage from "./AddImage"
 
 
-export let imageURL:any
-export let imageFromReportsURL: any
+export let imageURL:string
+export let imageFromReportsURL: string[]
 
-const Main: React.FC = (props: any) => {
+export const Main: React.FC = (props: any) => {
   const [buttonPopup, setButtonPopup] = useState(false)
   const [image, setImage] = useState<any>()
   const [imageFromReports, setImageFromReports] = useState([])
 
 
   
-   
   imageURL = image
   let navigate = useNavigate()
 
@@ -27,18 +26,17 @@ const Main: React.FC = (props: any) => {
     navigate("/Report/Page")
  }
 
-
+ const generateNewReport = () => {
+  getImage()
+  .then((item => setImage(item)))
+ }
   const generateImageURL = () => {
     getImage().then(item => setImage(item))
     setButtonPopup(true)
   }
   
-  
-
 useEffect(() => {
   getImage().then(item => setImage(item))
-  // getReports()
-  //   .then(report => setImageFromReports(report))
   }, [])
 
   useEffect(() => {
@@ -51,11 +49,13 @@ useEffect(() => {
       <div className="container-for-main">
         <img src={image} className="random-image" alt={""}/>
         <div className="button-container">
-          <div className="btn" >
+          <div className="btn" 
+            onClick={generateNewReport}          
+          >
             <h3>Real</h3>
           </div>
           <div className="btn"
-               onClick={generateImageURL}
+             onClick={generateImageURL}
           >
             <h3>Fake</h3>
           </div>
@@ -69,7 +69,7 @@ useEffect(() => {
           </div>
         </div>
         <div className="list-images-container">
-          {imageFromReports.map((report: any, index: number) => {
+          {imageFromReports.map((report: any) => {
             return (<AddImage image={report.src} id={report.id} />)
           })}
 
@@ -80,4 +80,4 @@ useEffect(() => {
 
 };
 
-export default Main;
+

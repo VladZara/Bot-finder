@@ -1,7 +1,7 @@
 import React from 'react';
-import ReportPage from './Components/ReportPage/ReportPage';
+import { ReportPage } from './Components/ReportPage/ReportPage';
 import { Route, Routes } from 'react-router-dom';
-import Main from "../src/Components/Main/Main"
+import { Main } from "../src/Components/Main/Main";
 
 
 function App() {
